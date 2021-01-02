@@ -7,5 +7,6 @@ url: http://www.heropatterns.com/
 tags:
   - html
   - css
+  - external
 ---
 <http://www.heropatterns.com/>
