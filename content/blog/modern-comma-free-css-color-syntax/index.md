@@ -12,5 +12,4 @@ Get used to the modern comma-free CSS color syntax, supported in all modern brow
 
 Why? Upcoming new features such as lab(), lch(), and color() use the same syntax (and don’t work with commas).
 
-
-![image](https://pbs.twimg.com/media/EWRn6vFXsAEw6EO?format=jpg&name=large)
+<img src="https://pbs.twimg.com/media/EWRn6vFXsAEw6EO?format=jpg&name=large" style="max-width: 100%" />
