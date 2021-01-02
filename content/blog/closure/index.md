@@ -1,6 +1,6 @@
 ---
 title: Closure
-date: 2021-01-02T17:53:20.682Z
+date: 2020-02-07T17:53:20.682Z
 description: The meaning of closure.
 tags:
   - javascript
