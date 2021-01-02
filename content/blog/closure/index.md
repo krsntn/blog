@@ -5,6 +5,6 @@ description: The meaning of closure.
 tags:
   - javascript
 ---
-when a function reads or writes a variable that is declared outside of it
+A closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
 
 <img src="https://pbs.twimg.com/media/EnrfbShUcAAKh7W?format=png" style="max-width: 100%" />
