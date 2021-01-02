@@ -14,3 +14,5 @@ tags:
 - **Debouncing** will bunch a series of sequential calls to a function into a single call to that function. It ensures that one notification is made for an event that fires multiple times.
 
 <img src="https://pbs.twimg.com/media/EnuFlceUcAIEzAS?format=png" style="max-width: 100%" />
+
+Here’s a great [article](https://redd.one/blog/debounce-vs-throttle) I found regarding debounce & throttle
