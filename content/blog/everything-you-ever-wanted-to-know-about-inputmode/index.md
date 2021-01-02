@@ -13,4 +13,4 @@ tags:
   - inputs
   - inputmode
 ---
-body
+<https://css-tricks.com/everything-you-ever-wanted-to-know-about-inputmode/>
