@@ -1,14 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Karson Blog 📜`,
+    title: `📜 Karson's Blog`,
     author: {
       name: `Karson`,
+      summary: `a front end dev trying to make the web a little better place and earn a living with it.`,
     },
     description: `Front End Dev, Sport Enthusiast & Occasional Graphic Designer making the web a little better place and trying to earn a living. 🤟🎊🎉`,
-    siteUrl: `https://dev.krsn.xyz`,
-    social: {
-      twitter: `ooneoneo`,
-    },
+    siteUrl: `https://blog.krsn.xyz`,
   },
   plugins: [
     {
