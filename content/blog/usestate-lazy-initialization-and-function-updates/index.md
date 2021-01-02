@@ -6,5 +6,6 @@ url: https://kentcdodds.com/blog/use-state-lazy-initialization-and-function-upda
 tags:
   - javascript
   - react
+  - external
 ---
 <https://kentcdodds.com/blog/use-state-lazy-initialization-and-function-updates>
