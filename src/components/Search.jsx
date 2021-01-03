@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ searchValue, onChange }) => {
+const Search = ({ searchValue, onChange, postCount }) => {
   return (
     <div className="search-box">
       <input
@@ -9,7 +9,8 @@ const Search = ({ searchValue, onChange }) => {
         value={searchValue}
         onChange={onChange}
       />
-      <span>🔎</span>
+      <span>{postCount}</span>
+      <span role="img">🔎</span>
     </div>
   );
 };

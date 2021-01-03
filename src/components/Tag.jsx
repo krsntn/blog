@@ -1,20 +1,20 @@
 import React from 'react';
 
-const Tag = ({ children }) => {
+const Tag = ({ children, onClick }) => {
   return (
-    <a href="https://google.com" style={{ marginRight: 4 }}>
-      <button
-        style={{
-          fontSize: 12,
-          padding: 6,
-          border: 0,
-          borderRadius: '0.5rem',
-          cursor: 'pointer',
-        }}
-      >
-        {children}
-      </button>
-    </a>
+    <button
+      style={{
+        fontSize: 12,
+        padding: 6,
+        border: 0,
+        borderRadius: '0.5rem',
+        cursor: 'pointer',
+        marginRight: 6,
+      }}
+      onClick={() => onClick(children)}
+    >
+      {children}
+    </button>
   );
 };
 

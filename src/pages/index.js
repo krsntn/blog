@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import { Link, graphql } from 'gatsby';
+import queryString from 'query-string';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
@@ -7,34 +8,81 @@ import SEO from '../components/seo';
 import Tag from '../components/Tag';
 import Search from '../components/Search';
 
-const BlogIndex = ({ data, location }) => {
+let timeout;
+function debounce(func, duration) {
+  return function (...args) {
+    const effect = () => {
+      timeout = null;
+      return func.apply(this, args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(effect, duration);
+  };
+}
+
+const BlogIndex = ({ data, location, navigate }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const [posts, setPosts] = useState(data.allMarkdownRemark.nodes);
   const [searchValue, setSearchValue] = useState('');
 
-  const onSearch = (event) => {
-    const { value } = event.target;
-    setSearchValue(value);
-
-    // filter posts
-    const allPosts = data.allMarkdownRemark.nodes;
-    const filteredPosts = allPosts.filter((post) =>
-      post.frontmatter.title.toLowerCase().includes(value.toLowerCase())
+  const onTagClick = useCallback((tag) => {
+    setSearchValue((oldValue) =>
+      oldValue.length === 0 ? tag : oldValue.trim() + ' ' + tag
     );
-    setPosts(filteredPosts);
-  };
+  }, []);
+
+  useEffect(() => {
+    // update url
+    if (searchValue) {
+      navigate(`?search=${searchValue}`);
+    } else {
+      navigate('');
+    }
+
+    function filterPosts() {
+      const searchValues = searchValue
+        .toLowerCase()
+        .split(' ')
+        .filter((x) => x !== '');
+
+      const allPosts = data.allMarkdownRemark.nodes;
+      const filteredPosts = allPosts.filter((post) => {
+        const postKeywords = post.frontmatter.title
+          .toLowerCase()
+          .concat(' ', post.frontmatter.tags?.join(' ') || '');
+
+        return searchValues.every((value) => postKeywords.includes(value));
+      });
+
+      setPosts(searchValue === '' ? allPosts : filteredPosts);
+    }
+
+    debounce(filterPosts, 500)();
+  }, [searchValue, data.allMarkdownRemark.nodes, navigate]);
+
+  useEffect(() => {
+    const params = queryString.parse(location.search);
+    if (params.length && params.search) {
+      setSearchValue(params.search);
+    }
+  }, [location.search]);
 
   return (
     <Layout location={location} title={siteTitle}>
       <SEO title="All posts" />
       <Bio />
-      <Search searchValue={searchValue} onChange={onSearch} />
+      <Search
+        searchValue={searchValue}
+        onChange={(event) => setSearchValue(event.target.value)}
+        postCount={posts.length}
+      />
       {posts.length === 0 ? (
         <p className="no-blog-post">No blog posts found.</p>
       ) : (
         <ol style={{ listStyle: `none` }}>
           {posts.map((post) => {
             const title = post.frontmatter.title || post.fields.slug;
+            const isExternal = !!post.frontmatter.url;
             const link = post.frontmatter.url || post.fields.slug;
             const tags = post.frontmatter.tags;
 
@@ -47,14 +95,25 @@ const BlogIndex = ({ data, location }) => {
                 >
                   <header>
                     <h2>
-                      <Link to={link} itemProp="url">
-                        <span
-                          itemProp="headline"
-                          data-external={!!post.frontmatter.url}
-                        >
-                          {title}
-                        </span>
-                      </Link>
+                      {isExternal ? (
+                        <a href={link} itemProp="url">
+                          <span
+                            itemProp="headline"
+                            data-external={!!post.frontmatter.url}
+                          >
+                            {title}
+                          </span>
+                        </a>
+                      ) : (
+                        <Link to={link} itemProp="url">
+                          <span
+                            itemProp="headline"
+                            data-external={!!post.frontmatter.url}
+                          >
+                            {title}
+                          </span>
+                        </Link>
+                      )}
                     </h2>
                     <small>{post.frontmatter.date}</small>
                   </header>
@@ -68,7 +127,9 @@ const BlogIndex = ({ data, location }) => {
                   </section>
                   <div>
                     {tags?.map((tag, index) => (
-                      <Tag key={index}>{tag}</Tag>
+                      <Tag key={index} onClick={onTagClick}>
+                        {tag}
+                      </Tag>
                     ))}
                   </div>
                 </article>

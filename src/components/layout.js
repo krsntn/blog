@@ -25,7 +25,7 @@ const Layout = ({ location, title, children }) => {
       <header className="global-header">{header}</header>
       <main>{children}</main>
       <footer>
-        Crafted by
+        2020, Crafted by
         {` `}
         <a href="https://dev.krsn.xyz">karson</a>
       </footer>

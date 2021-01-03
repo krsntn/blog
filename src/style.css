@@ -358,12 +358,18 @@ a:focus {
   padding: 6px;
   border: 0;
   outline: none;
-  width: 100%;
+  width: calc(100% - 60px);
 }
 
-.search-box span {
+.search-box span:first-of-type {
+  position: absolute;
+  right: 34px;
+}
+
+.search-box span:last-of-type {
   position: absolute;
   right: 10px;
+  cursor: default;
 }
 
 /* Media queries */
@@ -376,5 +382,13 @@ a:focus {
   ul,
   ol {
     list-style-position: inside;
+  }
+
+  .post-list-item h2 span[data-external='true']::before {
+    content: '';
+  }
+
+  .post-list-item h2 span[data-external='true']::after {
+    content: ' 🔗';
   }
 }
