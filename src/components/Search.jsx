@@ -10,7 +10,9 @@ const Search = ({ searchValue, onChange, postCount }) => {
         onChange={onChange}
       />
       <span>{postCount}</span>
-      <span role="img">🔎</span>
+      <span role="img" aria-label="magnifier">
+        🔎
+      </span>
     </div>
   );
 };
