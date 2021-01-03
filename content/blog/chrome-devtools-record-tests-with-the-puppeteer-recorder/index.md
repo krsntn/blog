@@ -8,5 +8,6 @@ tags:
   - puppeteer
   - chrome
   - devtools
+  - external
 ---
 <https://umaar.com/dev-tips/241-puppeteer-recorder/>

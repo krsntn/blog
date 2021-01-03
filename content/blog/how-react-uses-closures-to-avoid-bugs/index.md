@@ -7,5 +7,6 @@ url: https://epicreact.dev/how-react-uses-closures-to-avoid-bugs/
 tags:
   - react
   - javascript
+  - external
 ---
 <https://epicreact.dev/how-react-uses-closures-to-avoid-bugs/>

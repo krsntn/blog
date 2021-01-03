@@ -10,5 +10,6 @@ tags:
   - html
   - react
   - javascript
+  - external
 ---
 <https://www.joshwcomeau.com/react/dark-mode/>
