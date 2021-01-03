@@ -8,5 +8,6 @@ tags:
   - html
   - css
   - external
+  - background
 ---
 <http://www.heropatterns.com/>
