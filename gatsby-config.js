@@ -64,58 +64,58 @@ module.exports = {
         theme_color: `#005b99`,
         display: `fullscreen`,
         icon: `content/assets/favicons/icon.png`,
-        // icons: [
-        //   {
-        //     src: `content/assets/favicons/icon-57.png`,
-        //     sizes: `57x57`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-60.png`,
-        //     sizes: `60x60`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-72.png`,
-        //     sizes: `72x72`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-76.png`,
-        //     sizes: `76x76`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-114.png`,
-        //     sizes: `114x114`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-120.png`,
-        //     sizes: `120x120`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-144.png`,
-        //     sizes: `144x144`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-152.png`,
-        //     sizes: `152x152`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-167.png`,
-        //     sizes: `167x167`,
-        //     type: `image/png`,
-        //   },
-        //   {
-        //     src: `content/assets/favicons/icon-180.png`,
-        //     sizes: `180x180`,
-        //     type: `image/png`,
-        //   },
-        // ],
+        icons: [
+          {
+            src: `content/assets/favicons/icon-57.png`,
+            sizes: `57x57`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-60.png`,
+            sizes: `60x60`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-72.png`,
+            sizes: `72x72`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-76.png`,
+            sizes: `76x76`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-114.png`,
+            sizes: `114x114`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-120.png`,
+            sizes: `120x120`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-144.png`,
+            sizes: `144x144`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-152.png`,
+            sizes: `152x152`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-167.png`,
+            sizes: `167x167`,
+            type: `image/png`,
+          },
+          {
+            src: `content/assets/favicons/icon-180.png`,
+            sizes: `180x180`,
+            type: `image/png`,
+          },
+        ],
       },
     },
     `gatsby-plugin-react-helmet`,
