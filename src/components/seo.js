@@ -68,68 +68,6 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-      link={[
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '57x57',
-          href: 'favicons/icon-57.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '60x60',
-          href: 'favicons/icon-60.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '72x72',
-          href: 'favicons/icon-72.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '76x76',
-          href: 'favicons/icon-76.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '114x114',
-          href: 'favicons/icon-114.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '120x120',
-          href: 'favicons/icon-120.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '144x144',
-          href: 'favicons/icon-144.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '152x152',
-          href: 'favicons/icon-152.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '167x167',
-          href: 'favicons/icon-167.png',
-        },
-        {
-          rel: 'apple-touch-icon',
-          type: 'image/png',
-          sizes: '180x180',
-          href: 'favicons/icon-180.png',
-        },
-      ]}
     />
   );
 };
