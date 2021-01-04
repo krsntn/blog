@@ -63,7 +63,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#005b99`,
         display: `fullscreen`,
-        icon: `content/assets/favicons/icon.png`,
+        icon: `static/favicons/icon.png`,
         // icons: [
         //   {
         //     src: `content/assets/favicons/icon-57.png`,
