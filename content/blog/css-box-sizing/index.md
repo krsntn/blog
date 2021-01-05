@@ -1,6 +1,6 @@
 ---
 title: CSS Box Sizing
-date: 2021-01-05T09:03:08.402Z
+date: 2019-12-03T09:03:08.402Z
 description: CSS box-sizing property
 tags:
   - css
@@ -10,9 +10,7 @@ It's a CSS property is used to determine if **padding** and **border** should be
 
 ![image](https://i.imgur.com/lxVx3yO.png)
 
-<p class="codepen" data-height="487" data-theme-id="light" data-default-tab="css,result" data-user="kanahan" data-slug-hash="bGwMRoE" style="height: 487px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="CSS Box Sizing">
-  <span>See the Pen <a href="https://codepen.io/kanahan/pen/bGwMRoE">
-  CSS Box Sizing</a> by kanahan (<a href="https://codepen.io/kanahan">@kanahan</a>)
-  on <a href="https://codepen.io">CodePen</a>.</span>
-</p>
-<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+<iframe height="487" style="width: 100%;" scrolling="no" title="CSS Box Sizing" src="https://codepen.io/kanahan/embed/bGwMRoE?height=487&theme-id=light&default-tab=css,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href='https://codepen.io/kanahan/pen/bGwMRoE'>CSS Box Sizing</a> by kanahan
+  (<a href='https://codepen.io/kanahan'>@kanahan</a>) on <a href='https://codepen.io'>CodePen</a>.
+</iframe>
