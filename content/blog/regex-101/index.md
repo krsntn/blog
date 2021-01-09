@@ -62,6 +62,7 @@ Class | Definition
 g | global
 i | case insensitive
 
+<br />
 
 ## Regex in Javascript
 
@@ -100,7 +101,6 @@ let result;
 while ((result = reg.exec(sentence))) {
   console.log(result[1], result[2]);
 }
-
 // expected output: 
 //    David 011-1111
 //    Alex 022-3333
