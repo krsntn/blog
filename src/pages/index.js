@@ -27,13 +27,17 @@ const BlogIndex = ({ data, location, navigate }) => {
 
   const onTagClick = useCallback(
     (tag) => {
-      navigate(`?search=${searchValue ? searchValue + ' ' : ''}${tag}`);
+      setSearchValue(
+        (prevValue) => `${prevValue ? prevValue + ' ' : ''}${tag}`
+      );
     },
-    [searchValue, navigate]
+    [searchValue]
   );
 
   useEffect(() => {
     function filterPosts() {
+      navigate(searchValue ? `?search=${searchValue}` : '');
+
       const searchValues = searchValue
         .toLowerCase()
         .split(' ')
@@ -57,7 +61,7 @@ const BlogIndex = ({ data, location, navigate }) => {
   useEffect(() => {
     const params = queryString.parse(location.search);
     setSearchValue(params.search || '');
-  }, [location.search]);
+  }, []);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -65,9 +69,7 @@ const BlogIndex = ({ data, location, navigate }) => {
       <Bio />
       <Search
         searchValue={searchValue}
-        onChange={(event) =>
-          navigate(event.target.value ? `?search=${event.target.value}` : '')
-        }
+        onChange={(event) => setSearchValue(event.target.value)}
         postCount={posts.length}
       />
       {posts.length === 0 ? (
