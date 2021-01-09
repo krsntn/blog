@@ -11,7 +11,7 @@ tags:
 ### Character
 
 Class | Definition
---- | --- | ---
+:--- | :---
 . | any character except newline
 \w | any word character [A-Za-z0-9]
 \W | **NOT** word character
@@ -22,7 +22,7 @@ Class | Definition
 ### Quantifier
 
 Class | Definition
---- | --- | ---
+:--- | :---
 * | 0 or more
 + | 1 or more
 ? | 0 or 1
@@ -35,7 +35,7 @@ ab\|bc | match ab or bc
 ### Anchors
 
 Class | Definition
---- | --- | ---
+:--- | :---
 ^ | beginning
 $ | end
 \b | word boundary
@@ -44,21 +44,21 @@ $ | end
 ### Character Classes
 
 Class | Definition
---- | --- | ---
-[abc] | any of a, b or c
-[^abc] | *NOT** any of a, b or c
-[a-g] | any character between a and g
+:--- | :---
+\[abc\] | any of a, b or c
+\[\^abc\] | *NOT** any of a, b or c
+\[a\-g\] | any character between a and g
 
 ### Group
 
 Class | Definition
---- | --- | ---
-(abc) | group
+:--- | :---
+\(abc\) | group
 
 ### Flags
 
 Class | Definition
---- | --- | ---
+:--- | :---
 g | global
 i | case insensitive
 
