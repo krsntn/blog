@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback, useEffect, useRef } from 'react';
 import { Link, graphql } from 'gatsby';
 import queryString from 'query-string';
 
@@ -24,6 +24,7 @@ const BlogIndex = ({ data, location, navigate }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const [posts, setPosts] = useState(data.allMarkdownRemark.nodes);
   const [searchValue, setSearchValue] = useState('');
+  const isFirstRender = useRef(true);
 
   const onTagClick = useCallback((tag) => {
     setSearchValue((prevValue) => `${prevValue ? prevValue + ' ' : ''}${tag}`);
@@ -31,7 +32,7 @@ const BlogIndex = ({ data, location, navigate }) => {
 
   useEffect(() => {
     function filterPosts() {
-      navigate(searchValue ? `?search=${searchValue}` : '');
+      navigate(searchValue ? `?search=${searchValue}` : '', { replace: true });
 
       const searchValues = searchValue
         .toLowerCase()
@@ -50,7 +51,11 @@ const BlogIndex = ({ data, location, navigate }) => {
       setPosts(searchValue === '' ? allPosts : filteredPosts);
     }
 
-    debounce(filterPosts, 500)();
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+    } else {
+      debounce(filterPosts, 500)();
+    }
   }, [searchValue, data.allMarkdownRemark.nodes]);
 
   useEffect(() => {
