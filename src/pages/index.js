@@ -51,7 +51,7 @@ const BlogIndex = ({ data, location, navigate }) => {
     }
 
     debounce(filterPosts, 500)();
-  }, [searchValue, data.allMarkdownRemark.nodes, navigate]);
+  }, [searchValue, data.allMarkdownRemark.nodes]);
 
   useEffect(() => {
     const params = queryString.parse(location.search);
