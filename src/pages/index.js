@@ -25,14 +25,9 @@ const BlogIndex = ({ data, location, navigate }) => {
   const [posts, setPosts] = useState(data.allMarkdownRemark.nodes);
   const [searchValue, setSearchValue] = useState('');
 
-  const onTagClick = useCallback(
-    (tag) => {
-      setSearchValue(
-        (prevValue) => `${prevValue ? prevValue + ' ' : ''}${tag}`
-      );
-    },
-    [searchValue]
-  );
+  const onTagClick = useCallback((tag) => {
+    setSearchValue((prevValue) => `${prevValue ? prevValue + ' ' : ''}${tag}`);
+  }, []);
 
   useEffect(() => {
     function filterPosts() {
