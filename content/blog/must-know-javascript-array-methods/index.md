@@ -2,6 +2,8 @@
 title: Must Know JavaScript Array Methods
 date: 2020-06-22T14:04:25.171Z
 description: Some of the must know JavaScript array methods
+tags:
+  - javascript
 ---
 ### .toString()
 
