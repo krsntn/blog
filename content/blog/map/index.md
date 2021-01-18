@@ -6,7 +6,7 @@ tags:
   - javascript
 ---
 ### Map
-Map is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
+<code>Map</code> is a collection of keyed data items, just like an Object. But the main difference is that Map allows keys of any type.
 
 Methods and properties are:
 - <code>new Map()</code> - creates the maps.
