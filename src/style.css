@@ -285,6 +285,15 @@ a:focus {
   margin-top: var(--spacing-0);
 }
 
+.post-list-item h2 a {
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+.post-list-item h2 a:hover {
+  transform: translateY(-3px);
+}
+
 .post-list-item h2 span {
   position: relative;
 }
