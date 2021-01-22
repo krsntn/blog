@@ -6,7 +6,6 @@ tags:
   - macos
   - automator
 ---
-Steps:
 1. Launch Automator
 2. Create a new **Quick Action**
 <br />
@@ -19,7 +18,7 @@ Steps:
     - Set the *Pass Input* to be *"as arguments"*
     - Set the shell script as <code>open -nb "com.microsoft.VSCode" --args "$*"</code>
     - Save the action using a name like <code>Open in VS Code</code>
-
+    <br />
     <img src="https://www.jimbobbennett.io/content/images/2018/12/workflow.png" style="width:100%; max-width:500px;" />
 <br />
 
