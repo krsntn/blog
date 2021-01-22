@@ -19,12 +19,9 @@ Steps:
     - Set the *Pass Input* to be *"as arguments"*
     - Set the shell script as <code>open -nb "com.microsoft.VSCode" --args "$*"</code>
     - Save the action using a name like <code>Open in VS Code</code>
-```bash
-open -nb "com.microsoft.VSCode" --args "$*"
-```
 
-<img src="https://www.jimbobbennett.io/content/images/2018/12/workflow.png" style="width:100%; max-width:500px;" />
-
+    <img src="https://www.jimbobbennett.io/content/images/2018/12/workflow.png" style="width:100%; max-width:500px;" />
+<br />
 
 This will register a new quick action with Finder, and you will now able to right-click on any file or folder in Finder and select *Quick Actions -> Open in VS Code*
 
