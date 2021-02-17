@@ -55,6 +55,15 @@ Class | Definition
 :--- | :---
 \(abc\) | group
 
+### Lookaround
+
+Class | Definition
+:--- | :---
+\(?=abc\) | matches a group **after** the main expression
+\(?!abc\) | specifies a group that can not match **after** the main expression
+\(?<=abc\) | matches a group **before** the main expression *(not supported by all browsers)*
+\(?<!abc\) | specifies a group that can not match **before** the main expression *(not supported by all browsers)*
+
 ### Flags
 
 Class | Definition
