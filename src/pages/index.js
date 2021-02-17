@@ -23,6 +23,7 @@ function debounce(func, duration) {
 const BlogIndex = ({ data, location, navigate }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const [posts, setPosts] = useState(data.allMarkdownRemark.nodes);
+  const [showAllPosts, setShowAllPosts] = useState(false);
   const [searchValue, setSearchValue] = useState('');
   const isFirstRender = useRef(true);
 
@@ -58,10 +59,34 @@ const BlogIndex = ({ data, location, navigate }) => {
     }
   }, [searchValue, data.allMarkdownRemark.nodes]);
 
+  const loadMore = (e, click = false) => {
+    if (
+      !showAllPosts &&
+      (document.body.getBoundingClientRect().bottom <= window.innerHeight ||
+        click)
+    ) {
+      setTimeout(() => {
+        setShowAllPosts(true);
+      }, 500);
+    }
+  };
+
   useEffect(() => {
     const params = queryString.parse(location.search);
     setSearchValue(params.search || '');
   }, []);
+
+  useEffect(() => {
+    document.addEventListener('scroll', loadMore);
+
+    return () => {
+      document.removeEventListener('scroll', loadMore);
+    };
+  }, [showAllPosts]);
+
+  const displayPosts = showAllPosts
+    ? posts
+    : posts.filter((post, index) => index < 5);
 
   return (
     <Layout location={location} title={siteTitle}>
@@ -72,11 +97,11 @@ const BlogIndex = ({ data, location, navigate }) => {
         onChange={(event) => setSearchValue(event.target.value)}
         postCount={posts.length}
       />
-      {posts.length === 0 ? (
+      {displayPosts.length === 0 ? (
         <p className="no-blog-post">No blog posts found.</p>
       ) : (
         <ol style={{ listStyle: `none` }}>
-          {posts.map((post) => {
+          {displayPosts.map((post) => {
             const title = post.frontmatter.title || post.fields.slug;
             const isExternal = !!post.frontmatter.url;
             const link = post.frontmatter.url || post.fields.slug;
@@ -133,6 +158,26 @@ const BlogIndex = ({ data, location, navigate }) => {
             );
           })}
         </ol>
+      )}
+      {!showAllPosts && (
+        <button
+          type="button"
+          style={{
+            width: '100%',
+            color: '#fff',
+            padding: '10px 0',
+            borderRadius: '0.5rem',
+            fontSize: 'var(--fontSize-4)',
+            fontWeight: '600',
+            fontFamily: 'var(--font-heading)',
+            backgroundColor: '#17a973',
+            border: 0,
+            cursor: 'pointer',
+          }}
+          onClick={(e) => loadMore(e, true)}
+        >
+          Load More Posts
+        </button>
       )}
     </Layout>
   );
