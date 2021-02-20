@@ -71,6 +71,22 @@ const BlogIndex = ({ data, location, navigate }) => {
     }
   };
 
+  const renderPost = (isExternal, link, component) => {
+    if (isExternal) {
+      return (
+        <a href={link} itemProp="url" className="post-link">
+          {component}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={link} itemProp="url" className="post-link">
+        {component}
+      </Link>
+    );
+  };
+
   useEffect(() => {
     const params = queryString.parse(location.search);
     setSearchValue(params.search || '');
@@ -109,51 +125,39 @@ const BlogIndex = ({ data, location, navigate }) => {
 
             return (
               <li key={post.fields.slug}>
-                <article
-                  className="post-list-item"
-                  itemScope
-                  itemType="http://schema.org/Article"
-                >
-                  <header>
-                    <h2>
-                      {isExternal ? (
-                        <a href={link} itemProp="url">
-                          <span
-                            itemProp="headline"
-                            data-external={!!post.frontmatter.url}
-                          >
-                            {title}
-                          </span>
-                        </a>
-                      ) : (
-                        <Link to={link} itemProp="url">
-                          <span
-                            itemProp="headline"
-                            data-external={!!post.frontmatter.url}
-                          >
-                            {title}
-                          </span>
-                        </Link>
-                      )}
-                    </h2>
-                    <small>{post.frontmatter.date}</small>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
-                  </section>
-                  <div>
-                    {tags?.map((tag, index) => (
-                      <Tag key={index} onClick={onTagClick}>
-                        {tag}
-                      </Tag>
-                    ))}
-                  </div>
-                </article>
+                {renderPost(
+                  isExternal,
+                  link,
+                  <article
+                    className="post-list-item"
+                    itemScope
+                    itemType="http://schema.org/Article"
+                  >
+                    <header>
+                      <h2>
+                        <span itemProp="headline">
+                          {`${title} ${isExternal ? '🔗' : ''}`}
+                        </span>
+                      </h2>
+                      <small>{post.frontmatter.date}</small>
+                    </header>
+                    <section>
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.description || post.excerpt,
+                        }}
+                        itemProp="description"
+                      />
+                    </section>
+                    <div>
+                      {tags?.map((tag, index) => (
+                        <Tag key={index} onClick={onTagClick}>
+                          {tag}
+                        </Tag>
+                      ))}
+                    </div>
+                  </article>
+                )}
               </li>
             );
           })}

@@ -4,6 +4,7 @@ const Tag = ({ children, onClick }) => {
   return (
     <button
       style={{
+        color: 'inherit',
         fontSize: 12,
         padding: 6,
         border: 0,
