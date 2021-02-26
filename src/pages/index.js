@@ -57,19 +57,22 @@ const BlogIndex = ({ data, location, navigate }) => {
     } else {
       debounce(filterPosts, 500)();
     }
-  }, [searchValue, data.allMarkdownRemark.nodes]);
+  }, [searchValue, data.allMarkdownRemark.nodes, navigate]);
 
-  const loadMore = (e, click = false) => {
-    if (
-      !showAllPosts &&
-      (document.body.getBoundingClientRect().bottom <= window.innerHeight ||
-        click)
-    ) {
-      setTimeout(() => {
-        setShowAllPosts(true);
-      }, 500);
-    }
-  };
+  const loadMore = useCallback(
+    (e, click = false) => {
+      if (
+        !showAllPosts &&
+        (document.body.getBoundingClientRect().bottom <= window.innerHeight ||
+          click)
+      ) {
+        setTimeout(() => {
+          setShowAllPosts(true);
+        }, 500);
+      }
+    },
+    [showAllPosts]
+  );
 
   const renderPost = (isExternal, link, component) => {
     if (isExternal) {
@@ -98,7 +101,7 @@ const BlogIndex = ({ data, location, navigate }) => {
     return () => {
       document.removeEventListener('scroll', loadMore);
     };
-  }, [showAllPosts]);
+  }, [loadMore]);
 
   const displayPosts = showAllPosts
     ? posts
