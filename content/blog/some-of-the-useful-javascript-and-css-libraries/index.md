@@ -31,7 +31,7 @@ Small library to animate elements on your page as you scroll.
 
 [http://michalsnik.github.io/aos/](http://michalsnik.github.io/aos/)
 
-#### Jarallax
-Smooth parallax scrolling effect for background images, videos. Code in pure JavaScript with NO dependencies + jQuery supported. YouTube, Vimeo and Self-Hosted Videos parallax supported.
+#### Rellax
+Rellax is a buttery smooth, super lightweight, vanilla javascript parallax library.
 
-[https://github.com/nk-o/jarallax](https://github.com/nk-o/jarallax)
+[https://dixonandmoe.com/rellax/](https://dixonandmoe.com/rellax/)
