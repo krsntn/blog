@@ -30,3 +30,8 @@ Animate.css is a library of ready-to-use, cross-browser animations for use in yo
 Small library to animate elements on your page as you scroll.
 
 [http://michalsnik.github.io/aos/](http://michalsnik.github.io/aos/)
+
+#### Jarallax
+Smooth parallax scrolling effect for background images, videos. Code in pure JavaScript with NO dependencies + jQuery supported. YouTube, Vimeo and Self-Hosted Videos parallax supported.
+
+[https://github.com/nk-o/jarallax](https://github.com/nk-o/jarallax)
