@@ -27,10 +27,6 @@ const BlogIndex = ({ data, location, navigate }) => {
   const [searchValue, setSearchValue] = useState('');
   const isFirstRender = useRef(true);
 
-  const onTagClick = useCallback((tag) => {
-    setSearchValue((prevValue) => `${prevValue ? prevValue + ' ' : ''}${tag}`);
-  }, []);
-
   useEffect(() => {
     function filterPosts() {
       navigate(searchValue ? `?search=${searchValue}` : '', { replace: true });
@@ -50,6 +46,7 @@ const BlogIndex = ({ data, location, navigate }) => {
       });
 
       setPosts(searchValue === '' ? allPosts : filteredPosts);
+      setShowAllPosts(false);
     }
 
     if (isFirstRender.current) {
@@ -57,7 +54,7 @@ const BlogIndex = ({ data, location, navigate }) => {
     } else {
       debounce(filterPosts, 500)();
     }
-  }, [searchValue, data.allMarkdownRemark.nodes, navigate]);
+  }, [searchValue, data.allMarkdownRemark.nodes]);
 
   const loadMore = useCallback(
     (e, click = false) => {
@@ -154,9 +151,7 @@ const BlogIndex = ({ data, location, navigate }) => {
                     </section>
                     <div>
                       {tags?.map((tag, index) => (
-                        <Tag key={index} onClick={onTagClick}>
-                          {tag}
-                        </Tag>
+                        <Tag key={index}>{tag}</Tag>
                       ))}
                     </div>
                   </article>
@@ -166,7 +161,7 @@ const BlogIndex = ({ data, location, navigate }) => {
           })}
         </ol>
       )}
-      {!showAllPosts && (
+      {!showAllPosts && posts.length > 5 && (
         <button
           type="button"
           style={{

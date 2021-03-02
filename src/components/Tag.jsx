@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Tag = ({ children, onClick }) => {
+const Tag = ({ children }) => {
   return (
     <button
       style={{
@@ -12,7 +12,6 @@ const Tag = ({ children, onClick }) => {
         cursor: 'pointer',
         marginRight: 6,
       }}
-      onClick={() => onClick(children)}
     >
       {children}
     </button>
