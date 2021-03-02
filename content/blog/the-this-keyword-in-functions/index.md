@@ -35,11 +35,11 @@ function test() {
 test();
 ```
 
-Regular Functions
+##### Regular Functions
 - has the <code>this</code> keyword set to <code>this</code> on the global scope or undefined in 'strict mode'
 - inside a regular function, the value of <code>this</code> depends on how the function is called.
 
-Arrow Functions
+##### Arrow Functions
 - uses the <code>this</code> keyword from its parent scope
 
 ```javascript
