@@ -5,8 +5,8 @@ description: Git add command
 tags:
   - git
 ---
-<code>git add -A</code> stages **all changes**
-
-<code>git add .</code> stages new files and modifications, **without deletions** (on the **current directory and its subdirectories**).
-
-<code>git add -u</code> stages modifications and deletions, **without new files**
+Command | Definition
+:--- | :---
+<code>git add -A</code> | stages **all changes**
+<code>git add .</code> | stages new files and modifications, **without deletions** (on the **current directory and its subdirectories**)
+<code>git add -u</code> | stages modifications and deletions, **without new files**
