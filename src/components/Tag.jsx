@@ -3,6 +3,7 @@ import React from 'react';
 const Tag = ({ children }) => {
   return (
     <button
+      tabIndex="-1"
       style={{
         color: 'inherit',
         fontSize: 12,

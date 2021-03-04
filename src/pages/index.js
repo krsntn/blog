@@ -164,6 +164,7 @@ const BlogIndex = ({ data, location, navigate }) => {
       {!showAllPosts && posts.length > 5 && (
         <button
           type="button"
+          tabIndex="-1"
           style={{
             width: '100%',
             color: '#fff',

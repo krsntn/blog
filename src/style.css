@@ -366,6 +366,7 @@ a:focus {
   border: 0;
   outline: none;
   width: calc(100% - 60px);
+  line-height: 1.5rem;
 }
 
 .search-box span:first-of-type {
