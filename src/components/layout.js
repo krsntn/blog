@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 const Layout = ({ location, title, children }) => {
   const rootPath = `${__PATH_PREFIX__}/`;
@@ -23,14 +24,20 @@ const Layout = ({ location, title, children }) => {
   }
 
   return (
-    <div className="global-wrapper" data-is-root-path={isRootPath}>
-      <header className="global-header">{header}</header>
-      <main>{children}</main>
-      <footer>
-        2020, Crafted by
-        {` `}
-        <a href="https://dev.krsn.xyz">karson</a>
-      </footer>
+    <div
+      style={{
+        background: `url(/images/background.jpg) top center / 100% auto no-repeat`,
+      }}
+    >
+      <div className="global-wrapper" data-is-root-path={isRootPath}>
+        <header className="global-header">{header}</header>
+        <main>{children}</main>
+        <footer>
+          2020, Crafted by
+          {` `}
+          <a href="https://dev.krsn.xyz">karson</a>
+        </footer>
+      </div>
     </div>
   );
 };
