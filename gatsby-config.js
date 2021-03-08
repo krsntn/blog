@@ -3,7 +3,7 @@ module.exports = {
     title: `📜 Krsn's Lazy Dev Blog`,
     author: {
       name: `Karson`,
-      summary: `a front end dev trying to make the web a little better place while earning a living with it.`,
+      summary: `a front end dev trying to make the web a little better place while earning a living.`,
     },
     description: `Front End Dev, Sport Enthusiast & Occasional Graphic Designer making the web a little better place while trying to earn a living. 🤟🎊🎉`,
     siteUrl: `https://blog.krsn.xyz`,
