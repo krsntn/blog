@@ -124,7 +124,7 @@ const BlogIndex = ({ data, location, navigate }) => {
             const tags = post.frontmatter.tags;
 
             return (
-              <li key={post.fields.slug}>
+              <li key={post.fields.slug} tabIndex="-1">
                 {renderPost(
                   isExternal,
                   link,

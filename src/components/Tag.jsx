@@ -5,7 +5,6 @@ const Tag = ({ children }) => {
     <button
       tabIndex="-1"
       style={{
-        color: 'inherit',
         fontSize: 12,
         padding: 6,
         border: 0,
