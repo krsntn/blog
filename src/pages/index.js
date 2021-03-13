@@ -167,14 +167,14 @@ const BlogIndex = ({ data, location, navigate }) => {
           tabIndex="-1"
           style={{
             width: '100%',
-            color: '#fff',
+            color: 'var(--color-blue)',
             padding: '10px 0',
-            borderRadius: '0.5rem',
             fontSize: 'var(--fontSize-4)',
             fontWeight: '600',
-            fontFamily: 'var(--font-heading)',
-            backgroundColor: '#17a973',
-            border: 0,
+            backgroundColor: 'var(--color-background)',
+            border: '4px solid var(--color-gray)',
+            borderTop: '2px solid white',
+            borderLeft: '2px solid white',
             cursor: 'pointer',
           }}
           onClick={(e) => loadMore(e, true)}

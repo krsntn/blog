@@ -8,7 +8,10 @@ const Tag = ({ children }) => {
         fontSize: 12,
         padding: 6,
         border: 0,
-        borderRadius: '0.5rem',
+        border: '4px solid var(--color-gray)',
+        borderTop: '2px solid white',
+        borderLeft: '2px solid white',
+        backgroundColor: 'var(--color-background)',
         cursor: 'pointer',
         marginRight: 6,
       }}
