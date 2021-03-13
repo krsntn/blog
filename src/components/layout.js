@@ -8,7 +8,7 @@ const Layout = ({ location, title, children }) => {
   return (
     <div
       style={{
-        background: `url(/images/background.jpg) top center / 100% auto no-repeat`,
+        background: `url(/images/background.png) top center / 100% auto no-repeat`,
       }}
     >
       <div className="global-wrapper" data-is-root-path={isRootPath}>
