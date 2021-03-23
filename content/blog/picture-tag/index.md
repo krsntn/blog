@@ -1,7 +1,7 @@
 ---
 title: Picture Tag
 date: 2021-03-25T15:39:02.672Z
-description: Picture tag in HTML
+description: Multiple images fitting into different widths
 tags:
   - html
 ---
