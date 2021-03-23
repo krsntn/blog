@@ -1,7 +1,7 @@
 ---
 title: Base URL
 date: 2021-03-09T15:35:51.189Z
-description: Base URL in HTML
+description: Set same base URL across the document
 tags:
   - html
 ---
