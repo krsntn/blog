@@ -4,7 +4,7 @@ import queryString from 'query-string';
 
 import Bio from '../components/bio';
 import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Seo from '../components/seo';
 import Tag from '../components/Tag';
 import Search from '../components/Search';
 
@@ -106,7 +106,7 @@ const BlogIndex = ({ data, location, navigate }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+      <Seo title="All posts" />
       <Bio />
       <Search
         searchValue={searchValue}
