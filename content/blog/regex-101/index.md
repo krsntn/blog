@@ -23,12 +23,12 @@ Class | Definition
 
 Class | Definition
 :--- | :---
-* | 0 or more
-+ | 1 or more
-? | 0 or 1
-{1,} | between 1 or more
-{1, 5} | between 1 and 5
-{3} | exactly 3
+\* | 0 or more
+\+ | 1 or more
+\? | 0 or 1
+\{1,\} | between 1 or more
+\{1, 5\} | between 1 and 5
+\{3\} | exactly 3
 a+? | match as few as possible
 ab\|bc | match ab or bc
 
