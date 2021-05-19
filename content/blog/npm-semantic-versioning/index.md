@@ -2,6 +2,8 @@
 title: NPM Semantic Versioning
 date: 2021-05-19T13:58:24.044Z
 description: About semantic versioning of packages
+tags:
+  - npm
 ---
 ### Using semantic versioning to specify update types your package can accept
 
