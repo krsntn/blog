@@ -7,11 +7,11 @@ tags:
 ---
 | Name                                                                                                                   | Summary                                                                                                          |
 | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
-| [`prefers-color-scheme`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)                 | Detect if the user prefers a light or dark color scheme                                                          |
-| [`prefers-contrast`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)                         | Detects if the user has requested the system increase or decrease the amount of contrast between adjacent colors |
-| [`prefers-reduced-motion`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)             | The user prefers less motion on the page                                                                         |
-| [`prefers-reduced-transparency`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency) | The user prefers reduced transparency                                                                            |
-| [`inverted-colors`](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)            | Is the user agent or underlying OS inverting colors?                                                             |
+| [<code>prefers-color-scheme</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-color-scheme)                 | Detect if the user prefers a light or dark color scheme                                                          |
+| [<code>prefers-contrast</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-contrast)                         | Detects if the user has requested the system increase or decrease the amount of contrast between adjacent colors |
+| [<code>prefers-reduced-motion</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)             | The user prefers less motion on the page                                                                         |
+| [<code>prefers-reduced-transparency</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-transparency) | The user prefers reduced transparency                                                                            |
+| [<code>inverted-colors</code>](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/inverted-colors)            | Is the user agent or underlying OS inverting colors?                                                             |
 
 #### prefers-color-scheme [light, dark]
 ```css
