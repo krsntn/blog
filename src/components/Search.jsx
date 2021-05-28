@@ -4,6 +4,7 @@ const Search = ({ searchValue, onChange, postCount }) => {
   return (
     <div className="search-box">
       <input
+        id="search"
         type="text"
         placeholder="Search blog post"
         value={searchValue}

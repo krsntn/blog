@@ -9,6 +9,7 @@ const Layout = ({ location, title, children }) => {
     <div
       style={{
         background: `url(/images/background.png) top center / 100% auto no-repeat`,
+        minHeight: '100vh',
       }}
     >
       <div className="global-wrapper" data-is-root-path={isRootPath}>

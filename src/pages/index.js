@@ -20,6 +20,20 @@ function debounce(func, duration) {
   };
 }
 
+function slashListener(event) {
+  const activeElement = document.activeElement;
+  const inputs = ['input', 'select', 'button', 'textarea'];
+
+  if (
+    activeElement &&
+    inputs.indexOf(activeElement.tagName.toLowerCase()) === -1 &&
+    event.keyCode === 47
+  ) {
+    event.preventDefault();
+    document.querySelector('#search').focus();
+  }
+}
+
 const BlogIndex = ({ data, location, navigate }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`;
   const [posts, setPosts] = useState(data.allMarkdownRemark.nodes);
@@ -55,6 +69,15 @@ const BlogIndex = ({ data, location, navigate }) => {
       debounce(filterPosts, 500)();
     }
   }, [searchValue, data.allMarkdownRemark.nodes]);
+
+  useEffect(() => {
+    if (window) {
+      window.addEventListener('keypress', slashListener);
+      return () => {
+        window.removeEventListener('keypress', slashListener);
+      };
+    }
+  }, []);
 
   const loadMore = useCallback(
     (e, click = false) => {
